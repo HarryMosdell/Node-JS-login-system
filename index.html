@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="req.html"> test </a>
+
+
+   <div class="c" data-name="_data-name"> </div>
+
+    <script>
+        // This will be replaced by Node before sending
+        //const USERS = __USERS__;
+
+        //console.log("Users fromddd server:", USERS);
+
+       const user= document.querySelector("div");
+       const name=user.dataset.name;
+        user.innerText=name;
+
+      fetch("/users")
+      .then(res=> res.json())
+      .then (data=> console.log(data) )  
+    </script>
+</body>
+
+</html>
